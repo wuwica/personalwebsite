@@ -1,29 +1,39 @@
+:root{
+    --title-text-colour: #eaeaea;
+    --text-colour: #ccc;
+    --background-colour: #1f1f1f;
+    --theme-red: #dd3758;
+    --theme-blue: #49c8d1;
+    --theme-purple: #a04bbc;
+    --theme-yellow: #ffd82b;
+}
+
 h1 {
     margin: 0 0 30px 0;
     font-family: 'Questrial', sans-serif;
-    font-size: 2.6em;
-    color: #eaeaea;
+    font-size: 2.8em;
+    color: var(--title-text-colour);
 }
 
 p {
     font-family: 'Roboto', sans-serif;
     font-weight: lighter;
-    color: #ccc;
+    color: var(--text-colour);
 }
 
 a{
+    transition: all 0.4s ease;
     color: #4c91ff;
     text-decoration: none;
-    background: #1f1f1f
 }
 
 a:hover {
-    color: blue;
+    color:  #0044b3;
 }
 
 body {
     padding: 50px;
-    background-color: #1f1f1f
+    background-color: var(--background-colour);
 }
 
 #title {
@@ -44,15 +54,25 @@ body {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
+    /*
+    background-color: #262626;
+    padding: 50px;
+    experimental stuff 
+    */
 }
 
-footer {
+footing {
     width: 860px;
     position: absolute;
     bottom: 50px;
 }
 
-header {
+#footer-content{
+    width: 100%;
+}
+
+
+heading {
     width: 230px;
     float: left;
 }
@@ -75,20 +95,93 @@ skill-box {
     height: 50px;
 }
 
-.skills path {}
-
-.separator {
-    width: 5px;
-    background: linear-gradient(45deg, #dd3758, #49c8d1, #A04BBC, #ffd82b, #dd3758);
-    background-size: 1000% 1000%;
-    background-position: 0% 0%;
-    -webkit-animation: AnimationName 10s linear infinite;
-    -moz-animation: AnimationName 10s linear infinite;
-    animation: AnimationName 10s linear infinite;
+.skills path {
     
 }
 
-@-webkit-keyframes AnimationName {
+#menu-cards{
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    max-width: 960px;
+    width:100%;
+}
+
+.card{
+    transition: all 0.4s ease;
+    color: var(--text-colour);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 70px;
+    padding: 5px;
+    border: 3px solid transparent;
+    border-radius: 3px;
+}
+
+h3{
+    margin: 0;
+    font-family: 'Questrial', sans-serif;
+    font-size: 1em ;
+    font-weight: lighter;
+}
+
+#red:hover{
+    color: var(--theme-red);
+    border-color: var(--theme-red);
+}
+
+#blue:hover{
+    color: var(--theme-blue);
+    border-color: var(--theme-blue);
+}
+
+#purple:hover{
+    color: var(--theme-purple);
+    border-color: var(--theme-purple);
+}
+
+#yellow:hover{
+    color: var(--theme-yellow);
+    border-color: var(--theme-yellow);
+}
+
+@keyframes slideup {
+    0%{
+        transform: translateY(100%);
+        
+    }
+    15% {
+        transform: translateY(100%);
+        animation-timing-function: ease-out
+    }
+    50% {
+        transform: translateY(0%);
+        animation-timing-function: ease-in;
+    }
+    65% {
+        transform: translateY(-75%);
+        animation-timing-function: ease-out;
+    }
+    100%{
+        transform: translateY(-100%);
+        display: none;
+    }
+}
+
+.separator {
+    width: 5px;
+    background: linear-gradient(45deg, var(--theme-red), var(--theme-blue), var(--theme-purple), var(--theme-yellow), var(--theme-red));
+    background-size: 1000% 1000%;
+    background-position: 0% 0%;
+    -webkit-animation: GradientLoop 10s linear infinite;
+    -moz-animation: GradientLoop 10s linear infinite;
+    animation: GradientLoop 10s linear infinite;
+    border-radius: 5px;
+}
+
+@-webkit-keyframes GradientLoop {
     0% {
         background-position: 0% 0%
     }
@@ -97,7 +190,7 @@ skill-box {
     }
 }
 
-@-moz-keyframes AnimationName {
+@-moz-keyframes GradientLoop {
     0% {
         background-position: 0% 0%
     }
@@ -106,7 +199,7 @@ skill-box {
     }
 }
 
-@keyframes AnimationName {
+@keyframes GradientLoop {
     0% {
         background-position: 0% 0%
     }
@@ -126,9 +219,13 @@ skill-box {
     content {
         width: 100%;
     }
-    footer {
+    footing {
         width: 100%;
+    }
+    
+    #footer-content {
         margin: 0 50px;
+        width: auto;
     }
     .separator {
         width: 100%;
