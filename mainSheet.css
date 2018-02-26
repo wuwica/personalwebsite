@@ -36,6 +36,14 @@ body {
     background-color: var(--background-colour);
 }
 
+#page-manager{
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
 #title {
     width: 860px;
 }
@@ -56,6 +64,7 @@ body {
     flex-wrap: wrap;
     position: relative;
     overflow: hidden;
+    
     /*
     background-color: #262626;
     padding: 50px;
@@ -94,16 +103,11 @@ skill-box {
 }
 
 #menu-cards{
-    margin-top: 100px;
     display: flex;
-    justify-content: space-around;
-    max-width: 960px;
+    justify-content: space-between;
+    max-width: 860px;
     width:100%;
     position: relative;
-}
-
-.tab-button{
-    
 }
 
 .card{
@@ -170,28 +174,23 @@ h3{
     background:var(--theme-red);
 }
 
-#button-animation {
-
-}
-
 #slide-animation{
-    bottom: 0%;
+    top: 0%;
     position: absolute;
     width: 100%;
     height: 100%;
     background: var(--theme-red);
 }
 
-.slide-animation:hover{
+.slide-animation-play{
     animation-name: SlideUp;
-    animation-duration: 1.25s;
+    animation-duration: .75s;
     animation-fill-mode: forwards;
 }
 
 @keyframes SlideUp {
     0%{
         transform: translateY(100%);
-        
     }
     15% {
         transform: translateY(100%);
@@ -201,13 +200,16 @@ h3{
         transform: translateY(0%);
         animation-timing-function: ease-in;
     }
-    65% {
-        transform: translateY(-75%);
+    55%{
+        transform: translateY(0%);
+        animation-timing-function: ease-out;
+    }
+    70% {
+        transform: translateY(-65%);
         animation-timing-function: ease-out;
     }
     100%{
-        transform: translateY(-100%);
-        display: none;
+        transform: translateY(-101%);
     }
 }
 
@@ -219,7 +221,7 @@ h3{
     -webkit-animation: GradientLoop 10s linear infinite;
     -moz-animation: GradientLoop 10s linear infinite;
     animation: GradientLoop 10s linear infinite;
-    border-radius: 5px;
+    
 }
 
 @-webkit-keyframes GradientLoop {
