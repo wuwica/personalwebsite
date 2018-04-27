@@ -19,12 +19,14 @@ function openTab(evt, tabName) {
    
     element = document.getElementById(tabName);
     element.classList.remove("hidden");
-    document.getElementById("slide-animation").classList.remove("slide-animation-play");
+    document.getElementById("slide-animation").className="";
     element.classList.add("animate");
     
     void document.getElementById("slide-animation").offsetWidth;
     
     document.getElementById("slide-animation").classList.add("slide-animation-play");
+    document.getElementById("slide-animation").classList.add("slide-"+evt.currentTarget.id)
+    
     evt.currentTarget.className += " active";
     
 }
