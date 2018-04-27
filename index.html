@@ -19,7 +19,7 @@
             <h1>Jonathan <x>Wu</x></h1>
         </div>
         <div id="page-manager">
-            <div id="main-content">
+            <div id="main-content" class="tab">
                 <heading>
                     <p>Some header stuff with <a href="#">link</a></p>
                     <p>Some header stuff</p>
@@ -33,25 +33,29 @@
                 <content>
                     <p>Consider a health information site with two sets of fact sheets: A simplified version for the lay audience and a technical version for physicians. During testing, a physician participant reading the technical version stopped to say, “Look. I have five minutes in between patients to get the gist of this information. I’m not conducting research on the topic, I just want to learn enough to talk to my patients about it. If I can’t figure it out quickly, I can’t use it.” We’d made some incorrect assumptions about each audience’s needs and we would have missed this important revelation had we not tested the content.</p>
                 </content>
+                
             </div>
-            <div id="slide-animation" class="slide-animation-play"></div>
+            <div id="project-content" class="tab"></div>
+            <div id="resume-content" class="tab"></div>
+            <div id="contact-content" class="tab"></div>
+            <div id="slide-animation" ></div>   
         </div>
         <form id=menu-cards>
             <!--<div class="trapazoid"></div>-->
-            <div class="card" id=red>
-                <input type="radio" id="match_1" name="tab">
+            <div class="card active" id="red" onclick="openTab(event, 'main-content')">
+                <input type="radio" id="home-button">
+                <h3>Home</h3>
+            </div>
+            <div class="card" id="yellow" onclick="openTab(event, 'project-content')">
+                <input type="radio" id="projects-button">
                 <h3>Projects</h3>
             </div>
-            <div class="card" id="yellow">
-                <input type="radio" id="match_2" name="tab">
-                <h3>GitHub</h3>
-            </div>
-            <div class="card" id="purple">
-                <input type="radio" id="match_3" name="tab">
+            <div class="card" id="purple" onclick="openTab(event, 'resume-content')">
+                <input type="radio" id="resume-button">
                 <h3>Resume</h3>
             </div>
-            <div class="card" id="blue">
-                <input type="radio" id="match_3" name="tab">
+            <div class="card" id="blue" onclick="openTab(event, 'contact-content')">
+                <input type="radio" id="contact-button">
                 <h3>Contact</h3>
             </div>
         </form>
@@ -74,6 +78,7 @@
             gtag('config', 'UA-114498304-1');
         </script>
 
+        <script src="script.js"></script>
     </div>
 </body>
 
