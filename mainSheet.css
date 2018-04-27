@@ -9,13 +9,16 @@
     --link-colour: #4c91ff;
     --card-colour: #ddd;
 }
+html { 
+    margin-left: calc(100vw - 100%);
+}
 
 x {
     color: var(--background-colour);
     padding: 0 5px;
     margin: 0px;
     background: linear-gradient(90deg, var(--theme-red), var(--theme-yellow), var(--theme-purple), var(--theme-blue), var(--theme-red));
-    background-size: 1000% 1000%;
+    background-size: 1000% 100%;
     background-position: 0% 0%;
     -webkit-animation: GradientLoop 15s linear infinite;
     -moz-animation: GradientLoop 15s linear infinite;
@@ -49,6 +52,7 @@ a:hover {
 body {
     padding: 50px;
     background-color: var(--background-colour);
+    height: 100%;
 }
 
 #page-manager {
@@ -89,19 +93,38 @@ body {
 }
 
 .hidden{
-    max-height: 0px !important;
+    -webkit-animation: hideContent .75s linear forwards;
+    -moz-animation: hideContent .75s linear forwards;
+    animation: hideContent .75s linear forwards;
+    max-height: 0px;
     visibility: hidden;
-      -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+}
+@keyframes hideContent {
+    0% {
+        max-height: 500px;
+        visibility: visible;
+    }
+    15% {
+        max-height: 500px;
+        visibility: visible;
+    }
+    50% {
+        max-height: 0px;
+        visibility: visible;
+    }65%{
+        max-height: 0px;
+        visibility: hidden;
+    }
+    100% {
+        max-height: 0px;
+        visibility: hidden;
+    }
 }
 
 .animate{
-    animation-name: showContent;
-    animation-duration: .75s;
-    animation-fill-mode: forwards;
+    -webkit-animation: showContent .75s linear forwards;
+    -moz-animation: showContent .75s linear forwards;
+    animation: showContent .75s linear forwards;
 }
 
 @keyframes showContent {
@@ -128,7 +151,7 @@ body {
 footing {
     width: 860px;
     position: absolute;
-    bottom: 50px;
+    bottom: 60px;
 }
 
 #footer-content {
@@ -160,6 +183,10 @@ skill-box {
     max-width: 860px;
     width: 100%;
     position: relative;
+}
+
+#fake{
+    height:500px
 }
 
 .card {
@@ -224,11 +251,13 @@ h3 {
 }
 
 #slide-animation {
-    top: 100%;
+    top:0px;    
+    transform: translateY(100%);
     position: absolute;
     width: 100%;
     height: 100%;
     background: var(--theme-red);
+    will-change: transform;
 }
 
 .slide-animation-play {
@@ -239,7 +268,6 @@ h3 {
 
 @keyframes SlideDown {
     0% {
-        top:0;
         transform: translateY(-100%);
     }
     15% {
@@ -250,7 +278,7 @@ h3 {
         transform: translateY(0%);
         animation-timing-function: ease-in;
     }
-    55% {
+    65% {
         transform: translateY(0%);
         animation-timing-function: ease-out;
     }
@@ -259,7 +287,6 @@ h3 {
         animation-timing-function: ease-out;
     }
     100% {
-        top:0;
         transform: translateY(100%);
     }
 }
@@ -267,7 +294,7 @@ h3 {
 .separator {
     width: 5px;
     background: linear-gradient(45deg, var(--theme-red), var(--theme-blue), var(--theme-purple), var(--theme-yellow), var(--theme-red));
-    background-size: 1000% 1000%;
+    background-size: 100% 1000%;
     background-position: 0% 0%;
     -webkit-animation: GradientLoop 15s linear infinite;
     -moz-animation: GradientLoop 15s linear infinite;
@@ -323,7 +350,7 @@ h3 {
         width: 100%;
         height: 3px;
         background: linear-gradient(90deg, var(--theme-red), var(--theme-yellow), var(--theme-purple), var(--theme-blue), var(--theme-red));
-        background-size: 1000% 1000%;
+        background-size: 1000% 100%;
         background-position: 0% 0%;
         -webkit-animation: GradientLoop 15s linear infinite;
         -moz-animation: GradientLoop 15s linear infinite;
