@@ -26,6 +26,15 @@ html {
     border: 3px solid var(--background-colour);
 }
 
+textarea::-webkit-scrollbar {
+    width: 10px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background: #555;
+    border: 2px solid white;
+}
+
 x {
     color: var(--title-text-colour);
     padding: 0 5px;
