@@ -16,12 +16,13 @@
     <div id="container">
 
         <div id="title">
-            <h1>Jonathan <y>Paul</y>
+            <h1>Jonathan
+                <y>Paul</y>
                 <x>Wu</x>
             </h1>
         </div>
         <div id="page-manager">
-            <div id="main-content" class="tab">
+            <div id="main-content" class="tab hidden">
                 <heading>
                     <p>Some header stuff with <a href="#">link</a></p>
                     <p>Some header stuff</p>
@@ -41,7 +42,28 @@
                 <div id=fake></div>
             </div>
             <div id="resume-content" class="tab hidden"></div>
-            <div id="contact-content" class="tab hidden"></div>
+            <div id="contact-content" class="tab">
+                <form action="https://formspree.io/your@email.com" method="POST">
+                    <div id="contact-input">
+                        <div id="name-area">
+                            <div class="group">
+                                <input type="text" name="name" required>
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Name</label>
+                            </div>
+                            <div class="group">
+                                <input type="email" name="_replyto" required>
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Email</label>
+                            </div>
+                    <input id="submit-button" type="submit" value="Send">
+                        </div>
+                        <textarea name="message" placeholder="Your message"></textarea>
+                    </div>
+                </form>
+            </div>
             <div id="slide-animation"></div>
         </div>
         <form id=menu-cards>
@@ -88,4 +110,5 @@
         </div>
     </div>
 </body>
+
 </html>
