@@ -284,46 +284,86 @@ input:focus~.highlight {
     visibility: hidden;
 }
 
+#project-content{
+    display: flex;
+    justify-content: space-between;
+}
+
 .project-card {
     color: #777;
-    font-family: "Roboto", sans-serif;   
+    font-family: "Roboto", sans-serif;
     width: 350px;
     height: 400px;
     background: var(--title-text-colour);
 }
 
+.image-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); 
+    background-color: rgba(0, 0, 0, 0.2) ;
+
+}
+
 .project-image {
+    position: relative;
     height: 200px;
+    width: 100%;
+}
+
+.image-title {
+    position: absolute;
+    bottom:0px;
+    margin: 15px;
+    color: white;
+    font-size: 1.1em;
+    font-weight: 600;
 }
 
 .project-description {
     padding: 15px;
+    word-wrap: break-word;
     border-bottom: 1px solid #ccc;
 }
 
 .progress-bar-container {
     display: flex;
-    height: 50px;
+    padding: 17px 15px;
     border-bottom: 1px solid #ccc;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
-.image-cover{
+
+.image-cover {
     object-fit: cover;
+    opacity: .3;
+    z-index: 10;
 }
-.progress-bar{
+
+.progress-bar {
     width: 225px;
     background: #ccc;
     height: 12px;
 }
 
-.bar-fill{
+.bar-fill {
     height: 100%;
     background: var(--theme-yellow);
 }
 
-.project-skills{
+.project-skills {
     display: flex;
+    padding: 15px 0px;
+}
+
+.skill{
+    height: 45px;
+    width: 45px;
+    margin-left: 15px;
 }
 
 @keyframes hideContent {
