@@ -8,6 +8,7 @@
     --theme-yellow: #f2b529;
     --link-colour: #4c91ff;
     --card-colour: #ddd;
+    --side-colour: #555;
 }
 
 html {
@@ -22,7 +23,7 @@ html {
 ::-webkit-scrollbar-track {}
 
 ::-webkit-scrollbar-thumb {
-    background: #555;
+    background: var(--side-colour);
     border: 3px solid var(--background-colour);
 }
 
@@ -31,7 +32,7 @@ textarea::-webkit-scrollbar {
 }
 
 textarea::-webkit-scrollbar-thumb {
-    background: #555;
+    background: var(--side-colour);
     border: 2px solid white;
 }
 
@@ -140,7 +141,7 @@ body {
     flex-direction: column;
 }
 
-#contact-content form textarea{
+#contact-content form textarea {
     width: 500px;
     resize: none;
     font-family: 'Roboto', sans-serif;
@@ -166,12 +167,12 @@ body {
     margin-bottom: 45px;
 }
 
-#contact-content form #submit-button{
+#contact-content form #submit-button {
     border: 1px solid #757575;
     transition: all 0.3s ease;
 }
 
-#contact-content form #submit-button:hover{
+#contact-content form #submit-button:hover {
     color: var(--theme-blue);
     border-color: var(--theme-blue);
 }
@@ -281,6 +282,48 @@ input:focus~.highlight {
     animation: hideContent .75s linear forwards;
     max-height: 0px;
     visibility: hidden;
+}
+
+.project-card {
+    color: #777;
+    font-family: "Roboto", sans-serif;   
+    width: 350px;
+    height: 400px;
+    background: var(--title-text-colour);
+}
+
+.project-image {
+    height: 200px;
+}
+
+.project-description {
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.progress-bar-container {
+    display: flex;
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+    justify-content: space-around;
+    align-items: center;
+}
+.image-cover{
+    object-fit: cover;
+}
+.progress-bar{
+    width: 225px;
+    background: #ccc;
+    height: 12px;
+}
+
+.bar-fill{
+    height: 100%;
+    background: var(--theme-yellow);
+}
+
+.project-skills{
+    display: flex;
 }
 
 @keyframes hideContent {

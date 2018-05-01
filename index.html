@@ -22,7 +22,7 @@
             </h1>
         </div>
         <div id="page-manager">
-            <div id="main-content" class="tab hidden">
+            <div id="main-content" class="tab">
                 <heading>
                     <p>Some header stuff with <a href="#">link</a></p>
                     <p>Some header stuff</p>
@@ -39,10 +39,25 @@
 
             </div>
             <div id="project-content" class="tab hidden">
-                <div id=fake></div>
+                <div id=fake>
+                    <div class="project-card">
+                        <div class="project-image"><img class="image-cover" src="http://via.placeholder.com/350x200">
+                        </div>
+                        <div class="project-description">
+                            Test
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar">
+                                <div class="bar-fill" style="width:75%"></div>
+                            </div>
+                            <div class="percentage">75%</div>
+                        </div>
+                        <div class="project-skills"></div>
+                    </div>
+                </div>
             </div>
             <div id="resume-content" class="tab hidden"></div>
-            <div id="contact-content" class="tab">
+            <div id="contact-content" class="tab hidden">
                 <form action="https://formspree.io/your@email.com" method="POST">
                     <div id="contact-input">
                         <div id="name-area">
@@ -58,7 +73,7 @@
                                 <span class="bar"></span>
                                 <label>Email</label>
                             </div>
-                    <input id="submit-button" type="submit" value="Send">
+                            <input id="submit-button" type="submit" value="Send">
                         </div>
                         <textarea name="message" placeholder="Your message"></textarea>
                     </div>
