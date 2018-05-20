@@ -21,6 +21,26 @@
                 <x>Wu</x>
             </h1>
         </div>
+        
+        <form id=menu-cards>
+            <!--<div class="trapazoid"></div>-->
+            <div class="card active" id="red" onclick="openTab(event, 'main-content')">
+                <input type="radio" id="home-button">
+                <h3>Home</h3>
+            </div>
+            <div class="card" id="yellow" onclick="openTab(event, 'project-content')">
+                <input type="radio" id="projects-button">
+                <h3>Projects</h3>
+            </div>
+            <div class="card" id="purple" onclick="openTab(event, 'resume-content')">
+                <input type="radio" id="resume-button">
+                <h3>Resume</h3>
+            </div>
+            <div class="card" id="blue" onclick="openTab(event, 'contact-content')">
+                <input type="radio" id="contact-button">
+                <h3>Contact</h3>
+            </div>
+        </form>
         <div id="page-manager">
             <div id="main-content" class="tab">
                 <heading>
@@ -39,7 +59,6 @@
 
             </div>
             <div id="project-content" class="tab hidden">
-
                 <div class="project-card">
                     <div class="project-image"><img class="image-cover" src="http://via.placeholder.com/350x200">
                         <div class="image-overlay">
@@ -84,7 +103,9 @@
                     </div>
                 </div>
             </div>
-            <div id="resume-content" class="tab hidden"></div>
+            <div id="resume-content" class="tab hidden">
+            <a id="resume-link" href="JonathanWuResume.pdf" target="_blank"><img id="resume-image" src="imgs/resume2.0.svg" ></a>
+            </div>
             <div id="contact-content" class="tab hidden">
                 <form action="https://formspree.io/your@email.com" method="POST">
                     <div id="contact-input">
@@ -109,25 +130,6 @@
             </div>
             <div id="slide-animation"></div>
         </div>
-        <form id=menu-cards>
-            <!--<div class="trapazoid"></div>-->
-            <div class="card active" id="red" onclick="openTab(event, 'main-content')">
-                <input type="radio" id="home-button">
-                <h3>Home</h3>
-            </div>
-            <div class="card" id="yellow" onclick="openTab(event, 'project-content')">
-                <input type="radio" id="projects-button">
-                <h3>Projects</h3>
-            </div>
-            <div class="card" id="purple" onclick="openTab(event, 'resume-content')">
-                <input type="radio" id="resume-button">
-                <h3>Resume</h3>
-            </div>
-            <div class="card" id="blue" onclick="openTab(event, 'contact-content')">
-                <input type="radio" id="contact-button">
-                <h3>Contact</h3>
-            </div>
-        </form>
 
         <!-- <script src="script.js"></script> -->
         <!-- Global site tag (gtag.js) - Google Analytics -->
