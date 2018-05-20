@@ -49,7 +49,7 @@ x {
 }
 
 h1 {
-    margin: 0 0 30px 0;
+    margin: 0 0 50px 0;
     font-family: 'Questrial', sans-serif;
     font-size: 2.8em;
     color: var(--title-text-colour);
@@ -93,8 +93,10 @@ body {
     flex-direction: column;
     padding-top: 30px;
     padding-bottom: 30px;
-    margin-top: 20px;
+    margin-top: 0px;
     margin-bottom: 50px;
+    transition-timing-function: ease;
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 #title {
@@ -113,7 +115,6 @@ body {
 }
 
 #main-content {
-    width: 860px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -128,7 +129,6 @@ body {
 }
 
 #contact-content {
-    width: 860px;
 }
 
 #contact-content form #contact-input {
@@ -276,13 +276,33 @@ input:focus~.highlight {
     }
 }
 
-.hidden {
-    -webkit-animation: hideContent .75s linear forwards;
-    -moz-animation: hideContent .75s linear forwards;
-    animation: hideContent .75s linear forwards;
-    max-height: 0px;
-    visibility: hidden;
+.tab {
+    width: 860px;
 }
+
+.hidden {
+    height: 0;
+    visibility: hidden;
+    -webkit-animation: hideContent .75s linear;
+    -moz-animation: hideContent .75s linear;
+    animation: hideContent .75s linear;
+}
+
+@keyframes hideContent {
+    0% {
+        height: auto;
+        visibility: visible;
+    }
+    35% {
+        height: auto;
+        visibility: visible;
+    }
+    36% {
+        visibility: hidden ;
+        height: 0;
+    }
+}
+
 
 #project-content{
     display: flex;
@@ -313,6 +333,24 @@ input:focus~.highlight {
     position: relative;
     height: 200px;
     width: 100%;
+}
+
+#resume-content{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#resume-image{
+    background-color: white;
+    width:100%;
+}
+
+#resume-link{
+    width: 60%;
+    text-decoration: none;
+    border-bottom: none;
 }
 
 .image-title {
@@ -366,30 +404,9 @@ input:focus~.highlight {
     margin-left: 15px;
 }
 
-@keyframes hideContent {
-    0% {
-        max-height: 1000px;
-        visibility: visible;
-    }
-    15% {
-        max-height: 1000px;
-        visibility: visible;
-    }
-    50% {
-        max-height: 0px;
-        visibility: visible;
-    }
-    65% {
-        max-height: 0px;
-        visibility: hidden;
-    }
-    100% {
-        max-height: 0px;
-        visibility: hidden;
-    }
-}
 
 .animate {
+    
     -webkit-animation: showContent .75s linear forwards;
     -moz-animation: showContent .75s linear forwards;
     animation: showContent .75s linear forwards;
@@ -397,23 +414,16 @@ input:focus~.highlight {
 
 @keyframes showContent {
     0% {
-        max-height: 0px;
+        height: 0;
         visibility: hidden;
     }
-    15% {
-        max-height: 0px;
+    35% {
+        height: 0;
         visibility: hidden;
     }
-    50% {
-        max-height: 1000px;
-        visibility: hidden;
-    }
-    51% {
+    36% {
         visibility: visible;
-    }
-    100% {
-        max-height: 1000px;
-        visibility: visible;
+        height: auto;
     }
 }
 
@@ -494,7 +504,8 @@ h3 {
 
 .active {
     color: white;
-    outline: 2px solid;
+    outline: solid 1px white;
+    
 }
 
 .slide-red {
