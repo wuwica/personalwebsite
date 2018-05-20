@@ -49,7 +49,7 @@ x {
 }
 
 h1 {
-    margin: 0 0 50px 0;
+    margin: 0 0 60px 0;
     font-family: 'Questrial', sans-serif;
     font-size: 2.8em;
     color: var(--title-text-colour);
@@ -91,10 +91,9 @@ body {
     display: flex;
     overflow: hidden;
     flex-direction: column;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    margin-top: 0px;
-    margin-bottom: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 40px;
     transition-timing-function: ease;
     transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
@@ -504,7 +503,7 @@ h3 {
 
 .active {
     color: white;
-    border-bottom: transparent;
+    background: 
     
 }
 
@@ -525,23 +524,25 @@ h3 {
 }
 
 #red:hover {
-    color: var(--theme-red);
+    background-color: var(--theme-red);
     border-color: var(--theme-red);
 }
 
 #blue:hover {
-    color: var(--theme-blue);
+    background-color: var(--theme-blue);
     border-color: var(--theme-blue);
+    color: white;
 }
 
 #purple:hover {
-    color: var(--theme-purple);
+    background-color: var(--theme-purple);
     border-color: var(--theme-purple);
 }
 
 #yellow:hover {
-    color: var(--theme-yellow);
+    background-color: var(--theme-yellow);
     border-color: var(--theme-yellow);
+    color: white;
 }
 
 .trapazoid {
