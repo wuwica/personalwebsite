@@ -39,24 +39,53 @@
 
             </div>
             <div id="project-content" class="tab hidden">
-                <div id=fake>
-                    <div class="project-card">
-                        <div class="project-image"><img class="image-cover" src="http://via.placeholder.com/350x200">
+                <div class="project-card">
+                    <div class="project-image"><img class="image-cover" src="http://via.placeholder.com/350x200">
+                        <div class="image-overlay">
+                            <div class="image-title">Ma Website</div>
                         </div>
-                        <div class="project-description">
-                            Test
+
+                    </div>
+                    <div class="project-description"> You're looking at it, I mean you can look into this card to see more stuff.
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar">
+                            <div class="bar-fill" style="width:75%"></div>
                         </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar">
-                                <div class="bar-fill" style="width:75%"></div>
-                            </div>
-                            <div class="percentage">75%</div>
+                        <div class="percentage">75%</div>
+                    </div>
+                    <div class="project-skills">
+                        <img class="skill" src="imgs/skill-icons/html-5.svg">
+                        <img class="skill" src="imgs/skill-icons/css-3.svg">
+                        <img class="skill" src="imgs/skill-icons/javascript.svg">
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"><img class="image-cover" src="http://via.placeholder.com/350x200">
+                        <div class="image-overlay">
+                            <div class="image-title">Ma skitboard</div>
                         </div>
-                        <div class="project-skills"></div>
+
+                    </div>
+                    <div class="project-description"> I like to make things, here is my thing, please take a look at it.
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar">
+                            <div class="bar-fill" style="width:75%"></div>
+                        </div>
+                        <div class="percentage">75%</div>
+                    </div>
+                    <div class="project-skills">
+                        <img class="skill" src="imgs/skill-icons/solder.svg">
+                        <img class="skill" src="imgs/skill-icons/cad.svg">
+                        <img class="skill" src="imgs/skill-icons/arduino.svg">
+                        <img class="skill" src="imgs/skill-icons/3d-printer.svg">
                     </div>
                 </div>
             </div>
-            <div id="resume-content" class="tab hidden"></div>
+            <div id="resume-content" class="tab hidden">
+            <a id="resume-link" href="JonathanWuResume.pdf" target="_blank"><img id="resume-image" src="imgs/resume2.0.svg" ></a>
+            </div>
             <div id="contact-content" class="tab hidden">
                 <form action="https://formspree.io/your@email.com" method="POST">
                     <div id="contact-input">
@@ -81,6 +110,7 @@
             </div>
             <div id="slide-animation"></div>
         </div>
+
         <form id=menu-cards>
             <!--<div class="trapazoid"></div>-->
             <div class="card active" id="red" onclick="openTab(event, 'main-content')">
@@ -100,7 +130,6 @@
                 <h3>Contact</h3>
             </div>
         </form>
-
         <!-- <script src="script.js"></script> -->
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114498304-1"></script>

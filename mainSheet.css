@@ -49,7 +49,7 @@ x {
 }
 
 h1 {
-    margin: 0 0 30px 0;
+    margin: 0 0 50px 0;
     font-family: 'Questrial', sans-serif;
     font-size: 2.8em;
     color: var(--title-text-colour);
@@ -93,8 +93,10 @@ body {
     flex-direction: column;
     padding-top: 30px;
     padding-bottom: 30px;
-    margin-top: 20px;
+    margin-top: 0px;
     margin-bottom: 50px;
+    transition-timing-function: ease;
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 #title {
@@ -113,7 +115,6 @@ body {
 }
 
 #main-content {
-    width: 860px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -128,7 +129,6 @@ body {
 }
 
 #contact-content {
-    width: 860px;
 }
 
 #contact-content form #contact-input {
@@ -276,80 +276,137 @@ input:focus~.highlight {
     }
 }
 
+.tab {
+    width: 860px;
+}
+
 .hidden {
-    -webkit-animation: hideContent .75s linear forwards;
-    -moz-animation: hideContent .75s linear forwards;
-    animation: hideContent .75s linear forwards;
-    max-height: 0px;
+    height: 0;
     visibility: hidden;
+    -webkit-animation: hideContent .75s linear;
+    -moz-animation: hideContent .75s linear;
+    animation: hideContent .75s linear;
+}
+
+@keyframes hideContent {
+    0% {
+        height: auto;
+        visibility: visible;
+    }
+    35% {
+        height: auto;
+        visibility: visible;
+    }
+    36% {
+        visibility: hidden ;
+        height: 0;
+    }
+}
+
+
+#project-content{
+    display: flex;
+    justify-content: space-between;
 }
 
 .project-card {
     color: #777;
-    font-family: "Roboto", sans-serif;   
+    font-family: "Roboto", sans-serif;
     width: 350px;
     height: 400px;
     background: var(--title-text-colour);
 }
 
+.image-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); 
+    background-color: rgba(0, 0, 0, 0.2) ;
+
+}
+
 .project-image {
+    position: relative;
     height: 200px;
+    width: 100%;
+}
+
+#resume-content{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#resume-image{
+    background-color: white;
+    width:100%;
+}
+
+#resume-link{
+    width: 60%;
+    text-decoration: none;
+    border-bottom: none;
+}
+
+.image-title {
+    position: absolute;
+    bottom:0px;
+    margin: 15px;
+    color: white;
+    font-size: 1.1em;
+    font-weight: 600;
 }
 
 .project-description {
     padding: 15px;
+    word-wrap: break-word;
     border-bottom: 1px solid #ccc;
 }
 
 .progress-bar-container {
     display: flex;
-    height: 50px;
+    padding: 17px 15px;
     border-bottom: 1px solid #ccc;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
-.image-cover{
+
+.image-cover {
     object-fit: cover;
+    opacity: .3;
+    z-index: 10;
 }
-.progress-bar{
+
+.progress-bar {
     width: 225px;
     background: #ccc;
     height: 12px;
 }
 
-.bar-fill{
+.bar-fill {
     height: 100%;
     background: var(--theme-yellow);
 }
 
-.project-skills{
+.project-skills {
     display: flex;
+    padding: 15px 0px;
 }
 
-@keyframes hideContent {
-    0% {
-        max-height: 1000px;
-        visibility: visible;
-    }
-    15% {
-        max-height: 1000px;
-        visibility: visible;
-    }
-    50% {
-        max-height: 0px;
-        visibility: visible;
-    }
-    65% {
-        max-height: 0px;
-        visibility: hidden;
-    }
-    100% {
-        max-height: 0px;
-        visibility: hidden;
-    }
+.skill{
+    height: 45px;
+    width: 45px;
+    margin-left: 15px;
 }
+
 
 .animate {
+    
     -webkit-animation: showContent .75s linear forwards;
     -moz-animation: showContent .75s linear forwards;
     animation: showContent .75s linear forwards;
@@ -357,23 +414,16 @@ input:focus~.highlight {
 
 @keyframes showContent {
     0% {
-        max-height: 0px;
+        height: 0;
         visibility: hidden;
     }
-    15% {
-        max-height: 0px;
+    35% {
+        height: 0;
         visibility: hidden;
     }
-    50% {
-        max-height: 1000px;
-        visibility: hidden;
-    }
-    51% {
+    36% {
         visibility: visible;
-    }
-    100% {
-        max-height: 1000px;
-        visibility: visible;
+        height: auto;
     }
 }
 
@@ -454,7 +504,8 @@ h3 {
 
 .active {
     color: white;
-    outline: 2px solid;
+    outline: solid 1px white;
+    
 }
 
 .slide-red {
