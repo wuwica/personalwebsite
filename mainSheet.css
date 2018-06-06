@@ -290,6 +290,11 @@ input:focus~.highlight {
 
 }
 
+.start-hidden{
+    height: 0;
+    visibility: hidden;
+}
+
 @keyframes hideContent {
     0% {
         height: auto;
@@ -461,7 +466,7 @@ skill-box {
 
 #menu-cards {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     max-width: 860px;
     width: 100%;
     position: relative;
