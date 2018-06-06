@@ -50,6 +50,7 @@ x {
 
 h1 {
     margin: 0 0 60px 0;
+
     font-family: 'Questrial', sans-serif;
     font-size: 2.8em;
     color: var(--title-text-colour);
@@ -94,6 +95,7 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 40px;
+
     transition-timing-function: ease;
     transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
@@ -285,6 +287,7 @@ input:focus~.highlight {
     -webkit-animation: hideContent .75s linear;
     -moz-animation: hideContent .75s linear;
     animation: hideContent .75s linear;
+
 }
 
 @keyframes hideContent {
@@ -301,7 +304,6 @@ input:focus~.highlight {
         height: 0;
     }
 }
-
 
 #project-content{
     display: flex;
@@ -503,8 +505,6 @@ h3 {
 
 .active {
     color: white;
-    background: 
-    
 }
 
 .slide-red {
