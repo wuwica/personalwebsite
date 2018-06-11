@@ -50,7 +50,6 @@ x {
 
 h1 {
     margin: 0 0 60px 0;
-
     font-family: 'Questrial', sans-serif;
     font-size: 2.8em;
     color: var(--title-text-colour);
@@ -95,7 +94,6 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 40px;
-
     transition-timing-function: ease;
     transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
@@ -129,8 +127,7 @@ body {
     */
 }
 
-#contact-content {
-}
+#contact-content {}
 
 #contact-content form #contact-input {
     display: flex;
@@ -287,10 +284,9 @@ input:focus~.highlight {
     -webkit-animation: hideContent .75s linear;
     -moz-animation: hideContent .75s linear;
     animation: hideContent .75s linear;
-
 }
 
-.start-hidden{
+.start-hidden {
     height: 0;
     visibility: hidden;
 }
@@ -305,12 +301,12 @@ input:focus~.highlight {
         visibility: visible;
     }
     36% {
-        visibility: hidden ;
+        visibility: hidden;
         height: 0;
     }
 }
 
-@-webkit-keyframes hideContent{
+@-webkit-keyframes hideContent {
     0% {
         height: auto;
         visibility: visible;
@@ -320,12 +316,12 @@ input:focus~.highlight {
         visibility: visible;
     }
     36% {
-        visibility: hidden ;
+        visibility: hidden;
         height: 0;
     }
 }
 
-@-moz-keyframes hideContent{
+@-moz-keyframes hideContent {
     0% {
         height: auto;
         visibility: visible;
@@ -335,12 +331,12 @@ input:focus~.highlight {
         visibility: visible;
     }
     36% {
-        visibility: hidden ;
+        visibility: hidden;
         height: 0;
     }
 }
 
-#project-content{
+#project-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -363,9 +359,8 @@ input:focus~.highlight {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%); 
-    background-color: rgba(0, 0, 0, 0.2) ;
-
+    -ms-transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .project-image {
@@ -374,15 +369,16 @@ input:focus~.highlight {
     width: 100%;
 }
 
-#resume-content{
+#resume-content {
     overflow: hidden;
 }
 
-#resume-image{
+#resume-image {
     background-color: white;
-    width:45%;
+    width: 45%;
 }
-#resume-link{
+
+#resume-link {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -391,13 +387,13 @@ input:focus~.highlight {
     border-bottom: none;
 }
 
-#resume-link :hover{
+#resume-link:hover {
     height: 100px;
 }
 
 .image-title {
     position: absolute;
-    bottom:0px;
+    bottom: 0px;
     margin: 15px;
     color: white;
     font-size: 1.1em;
@@ -440,12 +436,11 @@ input:focus~.highlight {
     padding: 15px 0px;
 }
 
-.skill{
+.skill {
     height: 45px;
     width: 45px;
     margin-left: 15px;
 }
-
 
 .animate {
     -webkit-animation: showContent .75s linear forwards;
@@ -635,8 +630,10 @@ h3 {
 
 .slide-animation-play {
     animation: SlideDown .75s forwards;
-    -webkit-animation: SlideDown .75s forwards; /* Safari 4+ */
-    -moz-animation: SlideDown .75s forwards; /* Fx 5+ */
+    -webkit-animation: SlideDown .75s forwards;
+    /* Safari 4+ */
+    -moz-animation: SlideDown .75s forwards;
+    /* Fx 5+ */
     -o-animation: SlideDown .75s forwards;
 }
 
@@ -660,8 +657,12 @@ h3 {
         transform: translateY(65%);
         animation-timing-function: ease-out;
     }
-    100% {
+    99% {
+        opacity: 1;
         transform: translateY(100%);
+    }
+    100% {
+        opacity: 0;
     }
 }
 
@@ -685,8 +686,12 @@ h3 {
         transform: translateY(65%);
         animation-timing-function: ease-out;
     }
-    100% {
+    99% {
+        opacity: 1;
         transform: translateY(100%);
+    }
+    100% {
+        opacity: 0;
     }
 }
 
@@ -710,8 +715,12 @@ h3 {
         transform: translateY(65%);
         animation-timing-function: ease-out;
     }
-    100% {
+    99% {
+        opacity: 1;
         transform: translateY(100%);
+    }
+    100% {
+        opacity: 0;
     }
 }
 
@@ -735,8 +744,12 @@ h3 {
         transform: translateY(65%);
         animation-timing-function: ease-out;
     }
-    100% {
+    99% {
+        opacity: 1;
         transform: translateY(100%);
+    }
+    100% {
+        opacity: 0;
     }
 }
 
@@ -777,32 +790,110 @@ h3 {
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 768px) {
+    html {
+        margin: 0px;
+        padding: 0px;
+    }
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
+    #container {
+        width: 80%;
+        padding: 10%;
+        display: flex;
+        justify-content: center;
+    }
+    #menu-cards {
+        width: 100%;
+        justify-content: space-between;
+        max-width: 100%;
+    }
+    #page-manager {
+        margin-top: 0px;
+        width: 100%;
+    }
     #main-content {
         flex-direction: column;
         width: 100%;
     }
+    #project-content {
+        width: 100%;
+        max-width: 100%;
+    }
+    .project-card {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px
+    }
+    .image-cover {
+        width: 100%;
+        height: 150px;
+    }
+    .project-image {
+        height: 150px;
+    }
+    .progress-bar{
+        width: 100%;
+        margin-right: 15px;
+    }
+    
+    #slide-animation {
+        max-height: 100vh;
+    }
+    .skill {
+        width: 2em;
+        height: 2em;
+    }
+    #resume-content {
+        width: 100%;
+    }
+    #resume-image {
+        width: 100%;
+        margin: 0 0 20px 0px;
+    }
+    #resume-link {
+        flex-direction: column;
+    }
     #title {
         width: 100%;
+        text-align: center;
+    }
+    h1 {
+        font-size: 2.3em;
+        margin-bottom: 10px;
+    }
+    h3 {
+        font-size: 1em;
     }
     content {
         width: 100%;
     }
     .footer {
-        width: 100%;
+        padding: 0 10%;
+        width: 80%;
     }
     #footer-content {
-        margin: 0 50px;
-        width: auto;
+        width: 100%;
+    }
+    #footer-colour {
+        color: #777;
     }
     .separator {
         width: 100%;
-        height: 3px;
+        height: 10px;
         background: linear-gradient(90deg, var(--theme-red), var(--theme-yellow), var(--theme-purple), var(--theme-blue), var(--theme-red));
         background-size: 1000% 100%;
         background-position: 0% 0%;
         -webkit-animation: GradientLoop 15s linear infinite;
         -moz-animation: GradientLoop 15s linear infinite;
         animation: GradientLoop 15s linear infinite;
+    }
+}
+
+@media screen and (max-width: 353px) {
+    #container {
+        width: 90%;
+        padding: 5%;
     }
 }
