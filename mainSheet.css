@@ -96,6 +96,7 @@ body {
     margin-top: 40px;
     transition-timing-function: ease;
     transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: 1s;
 }
 
 #title {
@@ -143,6 +144,11 @@ body {
     width: 500px;
     resize: none;
     font-family: 'Roboto', sans-serif;
+    font-size: .9em;
+}
+
+#contact-content form #mobile-text {
+    display: none;
 }
 
 #contact-content form input {
@@ -281,9 +287,9 @@ input:focus~.highlight {
 .hidden {
     height: 0;
     visibility: hidden;
-    -webkit-animation: hideContent .75s linear;
-    -moz-animation: hideContent .75s linear;
-    animation: hideContent .75s linear;
+    -webkit-animation: hideContent 1s linear;
+    -moz-animation: hideContent 1s linear;
+    animation: hideContent 1s linear;
 }
 
 .start-hidden {
@@ -373,23 +379,61 @@ input:focus~.highlight {
     overflow: hidden;
 }
 
-#resume-image {
+#resume-cover {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fake-resume {
+    height: 100%;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resume-cover-image {
+    width: 100px;
+    transition: 0.3s ease;
+    opacity: 0;
+}
+
+#resume-link:hover #resume-container {
+    opacity: .5;
+}
+
+#resume-link:hover .resume-cover-image {
+    opacity: 1;
+}
+
+.resume-image {
     background-color: white;
     width: 45%;
 }
 
 #resume-link {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
     text-decoration: none;
     border-bottom: none;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#resume-link:hover {
-    height: 100px;
+#resume-container {
+    transition: 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+#resume-link:hover * {}
 
 .image-title {
     position: absolute;
@@ -443,9 +487,9 @@ input:focus~.highlight {
 }
 
 .animate {
-    -webkit-animation: showContent .75s linear forwards;
-    -moz-animation: showContent .75s linear forwards;
-    animation: showContent .75s linear forwards;
+    -webkit-animation: showContent 1s linear forwards;
+    -moz-animation: showContent 1s linear forwards;
+    animation: showContent 1s linear forwards;
 }
 
 @-webkit-keyframes showContent {
@@ -629,12 +673,12 @@ h3 {
 }
 
 .slide-animation-play {
-    animation: SlideDown .75s forwards;
-    -webkit-animation: SlideDown .75s forwards;
+    animation: SlideDown 1s forwards;
+    -webkit-animation: SlideDown 1s forwards;
     /* Safari 4+ */
-    -moz-animation: SlideDown .75s forwards;
+    -moz-animation: SlideDown 1s forwards;
     /* Fx 5+ */
-    -o-animation: SlideDown .75s forwards;
+    -o-animation: SlideDown 1s forwards;
 }
 
 @-webkit-keyframes SlideDown {
@@ -833,11 +877,10 @@ h3 {
     .project-image {
         height: 150px;
     }
-    .progress-bar{
+    .progress-bar {
         width: 100%;
         margin-right: 15px;
     }
-    
     #slide-animation {
         max-height: 100vh;
     }
@@ -848,13 +891,32 @@ h3 {
     #resume-content {
         width: 100%;
     }
-    #resume-image {
+    #resume-container {
+        flex-direction: column;
+    }
+    .resume-image {
         width: 100%;
         margin: 0 0 20px 0px;
     }
     #resume-link {
-        flex-direction: column;
+        width: 100%;
     }
+    
+    #contact-content form textarea {
+        display: none;
+    }
+        
+    #contact-content form #mobile-text {
+        display: block;
+        width: 300px;
+        height: 200px;
+        margin-bottom: 45px;
+    }
+    
+    #contact-content{
+        margin-top: 20px;
+    }
+    
     #title {
         width: 100%;
         text-align: center;

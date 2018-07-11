@@ -57,7 +57,7 @@
                 <content>
                     <p>Hiya there! I am a developer and maker who enjoys his fair share of unique and challenging problems. I am always looking for something new or interesting to pickup and learn.
                         <br>
-                        <br> Majority of my workplace experience is with IT Support, but I formally studied Computer Science at Wilfird Laurier University.
+                        <br> Majority of my workplace experience is with IT Support, but I formally studied Computer Science at Wilfrid Laurier University.
                         <br>
                         <br> Neither my education nor my experience dissuade me from taking on projects outside my expertise, I will always try to find ways to expand my knowledge.
                         <br>
@@ -162,9 +162,18 @@
             </div>
             <div id="resume-content" class="tab start-hidden">
                 <a id="resume-link" href="JonathanWuResume.pdf" target="_blank">
-                    <img id="resume-image" src="imgs/resume2.0.svg">
+                    <div id="resume-container">
+                        <img class="resume-image" src="imgs/resume2.0.svg">
 
-                    <img id="resume-image" src="imgs/resume2.0pg2.svg">
+                        <img class="resume-image" src="imgs/resume2.0pg2.svg">
+                    </div>
+                    <div id="resume-cover">
+                        <div class="fake-resume">
+                            <img class="resume-cover-image" src="imgs/external.svg">
+                        </div>
+                        <div class="fake-resume">
+                            <img class="resume-cover-image" src="imgs/external.svg"></div>
+                    </div>
                 </a>
             </div>
             <div id="contact-content" class="tab start-hidden">
@@ -183,6 +192,8 @@
                                 <span class="bar"></span>
                                 <label>Email</label>
                             </div>
+                            <textarea id="mobile-text" name="message" placeholder="Your message"></textarea>
+                            
                             <input id="submit-button" type="submit" value="Send">
                         </div>
                         <textarea name="message" placeholder="Your message"></textarea>
