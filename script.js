@@ -27,12 +27,23 @@ function openTab(evt, tabName) {
         var i, tabcontent, tablinks;
 
         if (tabName != currentTab) {
+
+            element = document.getElementById(tabName);
+            a = document.getElementById(currentTab).clientHeight;
+            element.style.height = "auto";
+            b = element.clientHeight;
+            element.style.height = null;
+            var maxHeight = Math.max(a, b);
+            var animationTiming = Math.sqrt(maxHeight) / 20 + "s";
             // Get all elements with class="tabcontent" and hide them
             tabcontent = document.getElementsByClassName("tab");
             for (i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].classList.remove("animate");
                 tabcontent[i].classList.remove("hidden");
                 if (tabcontent[i].id == currentTab) {
+                    //KEY HEIGHT THINGY
+                    tabcontent[i].style.animationDuration = animationTiming;
+                    //then add the class
                     tabcontent[i].classList.add("hidden");
                 } else {
                     tabcontent[i].classList.add("start-hidden");
@@ -47,19 +58,17 @@ function openTab(evt, tabName) {
 
             // Show the current tab, and add an "active" class to the button that opened the tab
 
-            element = document.getElementById(tabName);
             element.classList.remove("start-hidden");
 
-            a = document.getElementById(currentTab).clientHeight
-            b = element.clientHeight
-
-            document.getElementById("page-manager").style.minHeight = Math.max(a, b) + "px";
+            document.getElementById("page-manager").style.minHeight = maxHeight + "px";
 
             document.getElementById("slide-animation").className = "";
+            element.style.animationDuration = animationTiming;
             element.classList.add("animate");
 
             void document.getElementById("slide-animation").offsetWidth;
 
+            document.getElementById("slide-animation").style.animationDuration = animationTiming;
             document.getElementById("slide-animation").classList.add("slide-animation-play");
             document.getElementById("slide-animation").classList.add("slide-" + evt.currentTarget.id)
 

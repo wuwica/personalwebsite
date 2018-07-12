@@ -102,7 +102,7 @@ body {
     margin-top: 40px;
     transition-timing-function: ease;
     transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-    transition: 1s;
+    transition: .5s;
 }
 
 #title {
@@ -492,6 +492,10 @@ input:focus~.highlight {
     margin-left: 15px;
 }
 
+.animate-duration{
+    animation-duration: 1s;
+}
+
 .animate {
     -webkit-animation: showContent 1s linear forwards;
     -moz-animation: showContent 1s linear forwards;
@@ -699,7 +703,7 @@ h3 {
         transform: translateY(0%);
         animation-timing-function: ease-in;
     }
-    65% {
+    60% {
         transform: translateY(0%);
         animation-timing-function: ease-out;
     }
@@ -728,7 +732,7 @@ h3 {
         transform: translateY(0%);
         animation-timing-function: ease-in;
     }
-    65% {
+    60% {
         transform: translateY(0%);
         animation-timing-function: ease-out;
     }
@@ -757,7 +761,7 @@ h3 {
         transform: translateY(0%);
         animation-timing-function: ease-in;
     }
-    65% {
+    60% {
         transform: translateY(0%);
         animation-timing-function: ease-out;
     }
@@ -786,7 +790,7 @@ h3 {
         transform: translateY(0%);
         animation-timing-function: ease-in;
     }
-    65% {
+    60% {
         transform: translateY(0%);
         animation-timing-function: ease-out;
     }
@@ -862,6 +866,7 @@ h3 {
     #page-manager {
         margin-top: 0px;
         width: 100%;
+        transition: 1s;
     }
     #main-content {
         flex-direction: column;
