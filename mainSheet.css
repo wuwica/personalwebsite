@@ -67,6 +67,10 @@ p {
     color: var(--text-colour);
 }
 
+p b {
+    font-weight: bold;
+}
+
 a {
     transition: all 0.4s ease;
     color: var(--text-colour);
