@@ -372,7 +372,7 @@ input:focus~.highlight {
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
 .project-image {
@@ -466,8 +466,9 @@ input:focus~.highlight {
 
 .image-cover {
     object-fit: cover;
-    opacity: .3;
     z-index: 10;
+    width: 350px;
+    height: 200px;
 }
 
 .progress-bar {
@@ -490,6 +491,11 @@ input:focus~.highlight {
     height: 45px;
     width: 45px;
     margin-left: 15px;
+}
+
+.skill-image{
+    width: 45px;
+    height: auto;
 }
 
 .animate-duration{
@@ -691,6 +697,42 @@ h3 {
     -o-animation: SlideDown 1s forwards;
 }
 
+.tooltip {
+    position: relative;
+    display: flex;
+}
+
+.tooltip .tooltiptext {
+    opacity: 0;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 10;
+    bottom: 52px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.25s;
+    
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    opacity: 1;
+}
+
 @-webkit-keyframes SlideDown {
     0% {
         transform: translateY(-100%);
@@ -879,7 +921,7 @@ h3 {
     .project-card {
         width: 100%;
         height: auto;
-        margin-bottom: 20px
+        margin-bottom: 20px;
     }
     .image-cover {
         width: 100%;
