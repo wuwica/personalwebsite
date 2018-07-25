@@ -30,22 +30,22 @@
 
         <form id=menu-cards>
             <!--<div class="trapazoid"></div>-->
-            <div class="card active" id="red" onclick="openTab(event, 'main-content')">
+            <a href="#home" class="card active" id="red" onclick="openTab(event, 'main-content')">
                 <input type="radio" id="home-button">
                 <h3>Home</h3>
-            </div>
-            <div class="card" id="yellow" onclick="openTab(event, 'project-content')">
+            </a>
+            <a href="#projects" class="card" id="yellow" onclick="openTab(event, 'project-content')">
                 <input type="radio" id="projects-button">
                 <h3>Projects</h3>
-            </div>
-            <div class="card" id="blue" onclick="openTab(event, 'resume-content')">
+            </a>
+            <a href="#resume" class="card" id="blue" onclick="openTab(event, 'resume-content')">
                 <input type="radio" id="resume-button">
                 <h3>Resume</h3>
-            </div>
-            <div class="card" id="purple" onclick="openTab(event, 'contact-content')">
+            </a>
+            <a href="#contact" class="card" id="purple" onclick="openTab(event, 'contact-content')">
                 <input type="radio" id="contact-button">
                 <h3>Contact</h3>
-            </div>
+            </a>
         </form>
         <div id="page-manager">
             <div id="main-content" class="tab">
