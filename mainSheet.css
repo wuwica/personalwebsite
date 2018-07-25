@@ -397,7 +397,7 @@ input:focus~.highlight {
 
 .fake-resume {
     height: 100%;
-    width: 45%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -419,7 +419,7 @@ input:focus~.highlight {
 
 .resume-image {
     background-color: white;
-    width: 45%;
+    width: 100%;
 }
 
 #resume-link {
@@ -428,15 +428,12 @@ input:focus~.highlight {
     border-bottom: none;
     position: relative;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
 #resume-container {
+    width:100%;
     transition: 0.3s ease;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 #resume-link:hover * {}
@@ -943,9 +940,6 @@ h3 {
     }
     #resume-content {
         width: 100%;
-    }
-    #resume-container {
-        flex-direction: column;
     }
     .resume-image {
         width: 100%;
