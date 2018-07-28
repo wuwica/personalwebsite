@@ -97,6 +97,7 @@ body {
     display: flex;
     overflow: hidden;
     flex-direction: column;
+    align-items: center;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 40px;
@@ -382,6 +383,7 @@ input:focus~.highlight {
 }
 
 #resume-content {
+    width: 60%;
     overflow: hidden;
 }
 
@@ -469,7 +471,7 @@ input:focus~.highlight {
 }
 
 .progress-bar {
-    width: 225px;
+    width: 80%;
     background: #ccc;
     height: 12px;
 }
