@@ -383,7 +383,7 @@ input:focus~.highlight {
 }
 
 #resume-content {
-    width: 60%;
+    width: 80%;
     overflow: hidden;
 }
 
