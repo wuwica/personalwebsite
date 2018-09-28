@@ -663,6 +663,11 @@ h3 {
     border-color: var(--theme-purple);
 }
 
+.notpurple:hover {
+    background-color: transparent !important;
+    border-color: inherit !important;
+}
+
 #yellow:hover {
     background-color: var(--theme-yellow);
     border-color: var(--theme-yellow);
