@@ -1,6 +1,6 @@
 :root {
     --title-text-colour: #eaeaea;
-    --text-colour: #ddd;
+    --text-colour: #dfdfdf;
     --background-colour: #1f1f1f;
     --theme-red: #dd3758;
     --theme-blue: #43a5cc;
@@ -367,12 +367,17 @@ input:focus~.highlight {
 }
 
 .project-card {
-    color: #777;
+    color: #444;
     font-family: "Roboto", sans-serif;
     width: 350px;
     height: 400px;
     background: var(--title-text-colour);
     margin-bottom: 50px;
+}
+
+.project-card a {
+    color: #444;
+    border-bottom: 1px dotted #444;
 }
 
 .image-overlay {
