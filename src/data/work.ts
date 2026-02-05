@@ -30,7 +30,7 @@ export const work: Work[] = [
     ]
   },
   {
-    title: 'Yume Pay',
+    title: 'Arcade Credits System',
     image: '/imgs/credits.webp',
     description: 'In house payment system for Yume Arcade',
     descriptionExpanded: 'Designed and built an end to end arcade credit system. Built ontop of a custom PCB, c++ firmware, and a java spring boot backend with a 100% production uptime.',
@@ -60,7 +60,7 @@ export const work: Work[] = [
     ]
   },
   {
-    title: 'Yume Self Serve System',
+    title: 'Self Serve Arcade Kiosk',
     image: '/imgs/kiosk.webp',
     description: 'Fully automated self serve system for onboarding',
     descriptionExpanded: 'I built a complete self-service onboarding system for customers, including a fully purpose built kiosk designed to meet our unique system requirements and deliver a smooth, intuitive experience.',

@@ -39,11 +39,11 @@ export default function HomeContent() {
           <br /><br />
           I’m also a serial hobbyist, with interests spanning custom keyboards, 3D printing, homelabbing, manufacturing, and most recently arcade machines. 
           <br /><br />
-          <b>Things fresh in my Toolbelt:</b>
+          <b>Tools fresh in my Toolbelt:</b>
           <br />
           Java + Spring, Elixir + Phoenix, Google Cloud, Docker, Kubernetes, JavaScript, Langchain, Postgres
           <br /><br />
-          <b>Things I've used in the past:</b>
+          <b>Tools I've used in the past:</b>
           <br />
           Python, C ++, Swift, Ruby on Rails, Arduino, VB, PHP, React, JQuery, CSS, HTML, Machine Learning, Rust, Tauri
         </p>
