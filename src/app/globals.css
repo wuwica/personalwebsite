@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    margin-left: calc(100vw - 100%);
+    min-height: 100vh;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-[14px];
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-side border-[3px] border-background;
+  }
+
+  textarea::-webkit-scrollbar {
+    @apply w-[10px];
+  }
+
+  textarea::-webkit-scrollbar-thumb {
+    @apply bg-side border-2 border-white;
+  }
+
+  /* Links */
+  a {
+    @apply transition-all duration-300 text-text no-underline border-b border-dotted border-text;
+  }
+
+  a:hover {
+    @apply text-link;
+  }
+
+  /* Typography */
+  h1 {
+    @apply m-0 mb-[60px] font-questrial text-[2.8em] text-title-text;
+  }
+
+  h3 {
+    @apply m-0 font-questrial text-[1.35em] font-light;
+  }
+
+  h5 {
+    @apply text-base m-0 my-2 font-roboto font-light text-text;
+  }
+
+  p {
+    @apply font-roboto font-light text-text;
+  }
+
+  p b {
+    @apply font-bold;
+  }
+}
+
+@layer utilities {
+  /* CSS custom properties for synchronized gradient animation */
+  :root {
+    --gradient-horizontal: 0%;
+    --gradient-vertical: 0%;
+  }
+
+  /* Gradient animation for name */
+  .gradient-text {
+    background: linear-gradient(90deg, 
+      #ef4444 0%, 
+      #eab308 25%, 
+      #3b82f6 50%, 
+      #a855f7 75%, 
+      #ef4444 100%
+    );
+    background-size: 1000% 100%;
+    background-position: var(--gradient-horizontal) 0%;
+  }
+
+
+  .gradient-separator {
+    background: linear-gradient(0deg, 
+      #ef4444 0%, 
+      #a855f7 25%, 
+      #3b82f6 50%, 
+      #eab308 75%, 
+      #ef4444 100%
+    );
+    background-size: 100% 1000%;
+    background-position: 0% var(--gradient-vertical);
+  }
+
+  .gradient-background {
+    background: linear-gradient(0deg, 
+      #ef4444 0%, 
+      #a855f7 25%, 
+      #3b82f6 50%, 
+      #eab308 75%, 
+      #ef4444 100%
+    );
+    background-size: 100% 1000%;
+    background-position: 0% var(--gradient-vertical);
+  }
+
+  @media (max-width: 768px) {
+    html {
+      @apply m-0 p-0;
+    }
+
+    ::-webkit-scrollbar {
+      @apply w-0;
+    }
+
+    h1 {
+      @apply text-[2.3em] mb-[10px];
+    }
+
+    h3 {
+      @apply text-base;
+    }
+  }
+}
