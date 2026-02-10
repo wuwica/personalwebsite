@@ -4,10 +4,15 @@ import { useState, useRef, useEffect } from 'react'
 import TabNavigation from '@/components/TabNavigation'
 import HomeContent from '@/components/HomeContent'
 import WorkContent from '@/components/WorkContent'
-import ResumeContent from '@/components/ResumeContent'
+import dynamic from 'next/dynamic';
+
 import ContactContent from '@/components/ContactContent'
 import Footer from '@/components/Footer'
 import { AnimatePresence, motion } from 'framer-motion'
+
+const ResumeContent = dynamic(() => import('@/components/ResumeContent'), {
+  ssr: false,
+});
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<'home' | 'work' | 'resume' | 'contact'>('home')
@@ -41,7 +46,17 @@ export default function Home() {
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           const currentContentHeight = currentRef.current?.offsetHeight || 0
-          const nextContentHeight = nextRef.current?.offsetHeight || 0
+          let nextContentHeight = nextRef.current?.offsetHeight || 0
+          // Resume loads async (PDF); estimate its height based on page width
+          // so the slide animation has enough space and doesn't clip
+          const approximateWidth =
+            typeof window !== 'undefined'
+              ? Math.min(window.innerWidth * 0.9, 860) // matches ResumeContent max width
+              : 860
+          const minResumeHeight = Math.round(approximateWidth * 1.4) // A4/Letter-ish aspect ratio
+          if (tab === 'resume') {
+            nextContentHeight = Math.max(nextContentHeight, minResumeHeight)
+          }
           const currentFullHeight = currentContentHeight
           const nextFullHeight = nextContentHeight
           const maxHeight = Math.max(currentFullHeight, nextFullHeight)
@@ -127,8 +142,18 @@ export default function Home() {
             ref={containerRef}
             className={`relative ${isAnimating ? 'overflow-hidden' : 'overflow-visible'} mt-10`}
             style={{
-              height: lockedHeight > 0 ? `${lockedHeight}px` : currentHeight ? `${currentHeight}px` : 'auto',
-              transition: 'height 0.5s ease-in-out'
+              height:
+                !isAnimating && activeTab === 'resume'
+                  ? 'auto'
+                  : lockedHeight > 0
+                    ? `${lockedHeight}px`
+                    : currentHeight != null
+                      ? `${currentHeight}px`
+                      : 'auto',
+              transition:
+                !isAnimating && activeTab === 'resume'
+                  ? 'none'
+                  : 'height 0.5s ease-in-out'
             }}
           >
             <AnimatePresence>

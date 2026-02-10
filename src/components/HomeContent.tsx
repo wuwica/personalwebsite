@@ -3,21 +3,21 @@ import Image from 'next/image'
 export default function HomeContent() {
   return (
     <div className=" p-8 w-full max-w-[860px] flex flex-col md:flex-row justify-between flex-wrap relative overflow-hidden ">
-      <div className="flex flex-col md:min-h-0">
+      <div className="flex flex-col md:min-h-0 w-full md:w-[150px] lg:w-[200px] items-center md:items-start">
         <div className="flex justify-center md:justify-start">
-          <div className="w-[200px] h-[200px] flex-shrink-0 mr-4 md:mr-0">
+          <div className="flex-shrink-0 w-full">
             <Image
               src="/imgs/portrait.webp"
               alt="Jonathan Wu"
               width={200}
               height={200}
               priority
-              className="w-full h-[200px] object-cover rounded-full shadow-lg"
+              className="w-[200px] md:w-full h-auto object-cover rounded-full shadow-lg"
             />
           </div>
         </div>
 
-        <div className="flex-1 flex flex-col justify-end min-h-0 [&>h5]:my-1 w-[200px]">
+        <div className="w-full flex-1 flex flex-col justify-end min-h-0 [&>h5]:my-1 ">
           <h5>Shoot me an <a href="mailto:contactme@jonathanpwu.com?Subject=Hello%20Jonathan" target="_top">email</a></h5>
           <h5>Connect with me on <a href="https://www.linkedin.com/in/jonathan-wu-toronto/">LinkedIn</a></h5>
           <h5>My Biggest <a href="https://yumearcade.ca/">Passion Project</a></h5>
@@ -31,7 +31,7 @@ export default function HomeContent() {
         <div className="absolute inset-0 gradient-separator rounded-full"></div>
       </div>
 
-      <div className="w-full md:w-[500px] md:float-right">
+      <div className="w-full lg:w-[500px] md:w-[400px] md:float-right">
         <p>
         Hey there! I&apos;m Jonathan, a full-stack software developer, maker, and arcade owner with a love for unique, challenging problems. I&apos;m always on the lookout for something new to learn, whether that means refining old work or diving into something completely outside my comfort zone.
           <br /><br />
