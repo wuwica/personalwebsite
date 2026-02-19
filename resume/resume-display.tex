@@ -1,0 +1,123 @@
+% !TEX program = xelatex
+% Resume - Display version (2-column, for website & recruiters)
+% Compile with: xelatex resume-display.tex
+% If paper format error: LANG=C LC_ALL=C xelatex resume-display.tex
+\documentclass[10pt,letterpaper]{article}
+\usepackage{fontspec}
+\setmainfont{NiveauGroteskLight}[
+  Path = ../fonts/,
+  Extension = .ttf,
+  UprightFont = *,
+  BoldFont = NiveauGroteskBold,
+  BoldFeatures = {Path = ../fonts/niveaugrotesk/},
+  FontFace = {el}{n}{Font = NiveauGroteskExtraLight},
+  FontFace = {m}{n}{Font = NiveauGroteskRegular, Path = ../fonts/niveaugrotesk/},
+]
+\setsansfont{NiveauGroteskLight}[
+  Path = ../fonts/,
+  Extension = .ttf,
+  UprightFont = *,
+  BoldFont = NiveauGroteskBold,
+  BoldFeatures = {Path = ../fonts/niveaugrotesk/},
+  FontFace = {el}{n}{Font = NiveauGroteskExtraLight},
+  FontFace = {m}{n}{Font = NiveauGroteskRegular, Path = ../fonts/niveaugrotesk/},
+]
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[papersize={8.5in,11in}]{geometry}
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{xurl}
+\usepackage{hyperref}
+\usepackage{parskip}
+\setlength{\parskip}{2pt plus 1pt minus 1pt}
+\usepackage[expansion=false, protrusion=true, letterspace=100]{microtype}
+\usepackage{ragged2e}
+\usepackage{calc}
+
+% Colors from resume2.0.svg
+\definecolor{header}{rgb}{0.15,0.15,0.15}
+\definecolor{body}{rgb}{0.25,0.25,0.25}
+\definecolor{divider}{rgb}{0.75,0.75,0.75}
+\definecolor{linkblue}{rgb}{0.23,0.51,0.96}
+\definecolor{bulletbar}{HTML}{2E5FA3}
+\definecolor{titleblue}{HTML}{1B2A4A}
+\definecolor{sidebarblue}{HTML}{1B2A4A}
+
+\geometry{margin=0.45in, top=0.55in, bottom=0.55in}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlist[itemize]{leftmargin=*, nosep, itemsep=1pt, label=\textcolor{bulletbar}{\rule{0.35em}{0.35em}}}
+\frenchspacing
+
+% Custom base font size: 10.5pt (between 10pt and 11pt)
+\makeatletter
+\renewcommand{\normalsize}{\@setfontsize\normalsize{10.5}{12}%
+  \abovedisplayskip 10\p@ \@plus2\p@ \@minus5\p@
+  \abovedisplayshortskip \z@ \@plus3\p@
+  \belowdisplayskip \abovedisplayskip
+  \belowdisplayshortskip \belowdisplayskip
+  \let\@listi\@listI}
+\normalsize
+\makeatother
+
+\hypersetup{colorlinks=true, urlcolor=linkblue, linkcolor=linkblue, pdfborder={0 0 0}, breaklinks=true}
+
+% Section header with line to column edge
+\newlength{\sectheadrulewd}
+\newcommand{\sectionhead}[1]{%
+  \noindent\leavevmode\begingroup
+  \setlength{\sectheadrulewd}{\linewidth-\widthof{\large\textbf{\color{titleblue}#1}\hspace{.5em}}-1em}%
+  \large\textbf{\color{titleblue}#1}\hspace{.5em}\raisebox{0.35ex}{\textcolor{bulletbar}{\rule{\sectheadrulewd}{0.8pt}}}%
+  \endgroup\\[6pt]}
+
+% Content macros
+\newcommand{\name}[2]{\vspace{1em}\color{header}\fontsize{34}{34}\selectfont\sffamily\fontseries{m}\selectfont#1\ \setlength{\fboxrule}{2.5pt}\setlength{\fboxsep}{3pt}\fcolorbox{bulletbar}{sidebarblue}{#2}\hspace{0.3em}\raisebox{0.4ex}{\footnotesize\color{body}\begin{tabular}[t]{@{}l@{}}\taglinecontent\end{tabular}}\\}
+\newcommand{\tagline}[1]{\newcommand{\taglinecontent}{#1}}
+\newcommand{\summary}[1]{\color{body}\sectionhead{Summary}{\fontseries{l}\selectfont #1}\vspace{5pt}}
+\newcommand{\contact}[1]{\color{body}\sectionhead{Contact}{\fontseries{l}\selectfont #1}\vspace{5pt}}
+\newcommand{\education}[1]{\color{body}\sectionhead{Education}{\fontseries{l}\selectfont #1}\vspace{5pt}}
+\newcommand{\languages}[1]{\color{body}\sectionhead{Languages}{\fontseries{l}\selectfont #1}\vspace{5pt}}
+\newcommand{\tools}[1]{\color{body}\sectionhead{Tools and Software}{\fontseries{l}\selectfont #1}\vspace{5pt}}
+\newcommand{\languagesandtools}[2]{\color{body}\sectionhead{Languages \& Tools}{\fontseries{l}\selectfont #1 \\[2pt] #2}\vspace{5pt}}
+\newcommand{\hobbies}[1]{\color{body}\sectionhead{Hobbies}{\fontseries{l}\selectfont \begin{itemize}#1\end{itemize}}\vspace{5pt}}
+\newcommand{\experience}[1]{\color{body}\sectionhead{Experience}#1}
+\newcommand{\phone}[1]{\color{body}\mbox{#1}}
+\newcommand{\email}[1]{\href{mailto:#1}{\color{linkblue}#1}}
+\newcommand{\link}[1]{\href{https://#1}{\color{linkblue}#1}\color{body}}
+\newcommand{\edu}[3]{\color{body}\textbf{#1} \\ #2 \\ #3\vspace{3pt}}
+\newcommand{\slashsep}{\ \textcolor{bulletbar}{\textbf{/}}\ }
+\newcommand{\job}[5]{\color{body}\large\textbf{\textcolor{black}{#1}} \hfill #2 \\ \small\textbf{\textcolor{titleblue}{#3}} \hfill \small\textbf{#4} \\ \vspace{3pt}\normalsize\begin{itemize}#5\end{itemize}\vspace{4pt}}
+\newcommand{\contactsep}{\\}
+
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+
+\begin{document}
+\sloppy
+\emergencystretch=2em
+\tolerance=300
+\noindent
+\setlength{\fboxrule}{0pt}%
+\setlength{\fboxsep}{14pt}%
+\colorbox{titleblue}{%
+\begin{minipage}[t][\dimexpr\textheight-0.35in\relax][t]{0.26\textwidth}
+  \sffamily
+  \normalsize\RaggedRight
+  \begingroup
+  \colorlet{body}{white}%
+  \colorlet{header}{white}%
+  \colorlet{titleblue}{white}%
+  \colorlet{linkblue}{white}%
+  \input{resume-header}%
+  \vspace{16pt}
+  \input{resume-sidebar}
+  \endgroup
+  \vfill
+\end{minipage}%
+}
+\hfill
+\begin{minipage}[t]{0.67\textwidth}
+  \normalsize\RaggedRight
+  \input{resume-main}
+\end{minipage}
+\end{document}

@@ -15,6 +15,15 @@
 # production
 /build
 
+# resume LaTeX build
+/resume/build/
+/resume/*.aux
+/resume/*.log
+/resume/*.out
+/resume/*.fls
+/resume/*.fdb_latexmk
+/resume/*.synctex.gz
+
 # misc
 .DS_Store
 *.pem

@@ -1,0 +1,107 @@
+% !TEX program = xelatex
+% Resume - ATS/Bot version (single column, optimized for parsing, styled like display)
+% Compile with: xelatex resume-ats.tex
+\documentclass[10pt,letterpaper]{article}
+\usepackage{fontspec}
+\setmainfont{NiveauGroteskLight}[
+  Path = ../fonts/,
+  Extension = .ttf,
+  UprightFont = *,
+  BoldFont = NiveauGroteskBold,
+  BoldFeatures = {Path = ../fonts/niveaugrotesk/},
+  FontFace = {el}{n}{Font = NiveauGroteskExtraLight},
+  FontFace = {m}{n}{Font = NiveauGroteskRegular, Path = ../fonts/niveaugrotesk/},
+]
+\setsansfont{NiveauGroteskLight}[
+  Path = ../fonts/,
+  Extension = .ttf,
+  UprightFont = *,
+  BoldFont = NiveauGroteskBold,
+  BoldFeatures = {Path = ../fonts/niveaugrotesk/},
+  FontFace = {el}{n}{Font = NiveauGroteskExtraLight},
+  FontFace = {m}{n}{Font = NiveauGroteskRegular, Path = ../fonts/niveaugrotesk/},
+]
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[papersize={8.5in,11in}]{geometry}
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{xurl}
+\usepackage{hyperref}
+\usepackage[expansion=false, protrusion=true, letterspace=100]{microtype}
+\usepackage{parskip}
+\setlength{\parskip}{2pt plus 1pt minus 1pt}
+\usepackage{ragged2e}
+\usepackage{calc}
+\usepackage{setspace}
+
+% Colors from display resume
+\definecolor{header}{rgb}{0.15,0.15,0.15}
+\definecolor{body}{rgb}{0.25,0.25,0.25}
+\definecolor{linkblue}{rgb}{0.23,0.51,0.96}
+\definecolor{bulletbar}{HTML}{2E5FA3}
+\definecolor{titleblue}{HTML}{1B2A4A}
+
+\geometry{margin=0.5in, top=0.45in, bottom=0.45in}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlist[itemize]{leftmargin=*, nosep, itemsep=1pt, label=\textcolor{bulletbar}{\rule{0.35em}{0.35em}}}
+\frenchspacing
+
+% Custom base font size (matches display)
+\makeatletter
+\renewcommand{\normalsize}{\@setfontsize\normalsize{10}{11.5}%
+  \abovedisplayskip 10\p@ \@plus2\p@ \@minus5\p@
+  \abovedisplayshortskip \z@ \@plus3\p@
+  \belowdisplayskip \abovedisplayskip
+  \belowdisplayshortskip \belowdisplayskip
+  \let\@listi\@listI}
+\normalsize
+\makeatother
+
+\hypersetup{colorlinks=true, urlcolor=linkblue, linkcolor=linkblue, pdfborder={0 0 0}, breaklinks=true}
+
+% Section header with line to edge (from display)
+\newlength{\sectheadrulewd}
+\newcommand{\sectionhead}[1]{%
+  \noindent\leavevmode\begingroup
+  \setlength{\sectheadrulewd}{\linewidth-\widthof{\normalsize\textbf{\color{titleblue}#1}\hspace{.5em}}-1em}%
+  \normalsize\textbf{\color{titleblue}#1}\hspace{.5em}\raisebox{0.35ex}{\textcolor{bulletbar}{\rule{\sectheadrulewd}{0.8pt}}}%
+  \endgroup\\[5pt]}
+
+% Content macros (styled like display, single-column layout)
+\newcommand{\name}[2]{\vspace{0.3em}\color{header}\fontsize{24}{24}\selectfont\sffamily\fontseries{m}\selectfont#1\ #2\\[3pt]}
+\newcommand{\namewithcontact}[3]{\vspace{0.3em}\color{header}\fontsize{24}{24}\selectfont\sffamily\fontseries{m}\selectfont#1\ #2\hfill\fontsize{9.5}{11}\selectfont\fontseries{l}\selectfont\color{body}#3\normalsize\\[5pt]}
+\newcommand{\tagline}[1]{\newcommand{\taglinecontent}{#1}}
+\newcommand{\summary}[1]{\color{body}\sectionhead{Summary}\fontseries{l}\selectfont\fontsize{9.5}{10.5}\selectfont#1\normalsize\vspace{5pt}}
+\newcommand{\contact}[1]{\color{body}\sectionhead{Contact}\fontseries{l}\selectfont\fontsize{9.5}{10.5}\selectfont#1\normalsize\vspace{5pt}}
+\newcommand{\education}[1]{\color{body}\sectionhead{Education}\fontseries{l}\selectfont\fontsize{9.5}{10.5}\selectfont#1\normalsize\vspace{5pt}}
+\newcommand{\languages}[1]{\color{body}\sectionhead{Languages}\fontseries{l}\selectfont\fontsize{9.5}{10.5}\selectfont#1\normalsize\vspace{5pt}}
+\newcommand{\tools}[1]{\color{body}\sectionhead{Tools and Software}\fontseries{l}\selectfont\fontsize{9.5}{10.5}\selectfont#1\normalsize\vspace{5pt}}
+\newcommand{\languagesandtools}[2]{\color{body}\sectionhead{Languages \& Tools}\fontseries{l}\selectfont\fontsize{9.5}{10.5}\selectfont#1 \\[2pt] #2\normalsize\vspace{5pt}}
+\newcommand{\hobbies}[1]{\color{body}\sectionhead{Hobbies}\fontseries{l}\selectfont\fontsize{9.5}{10.5}\selectfont\begin{itemize}#1\end{itemize}\normalsize\vspace{5pt}}
+\newcommand{\experience}[1]{\color{body}\sectionhead{Experience}#1}
+\newcommand{\phone}[1]{\color{body}\mbox{#1}}
+\newcommand{\email}[1]{\href{mailto:#1}{\color{linkblue}#1}}
+\newcommand{\link}[1]{\href{https://#1}{\color{linkblue}#1}\color{body}}
+\newcommand{\slashsep}{\ \textcolor{bulletbar}{\textbf{/}}\ }
+\newcommand{\edu}[3]{\color{body}\textbf{#1} \\ #2 \\ #3\vspace{3pt}}
+\newcommand{\job}[5]{\color{body}\normalsize\textbf{\textcolor{black}{#1}} \hfill #2 \\ \small\textbf{\textcolor{titleblue}{#3}} \hfill \small\textbf{#4} \\ \vspace{3pt}\normalsize\begin{itemize}#5\end{itemize}\vspace{4pt}}
+\newcommand{\contactsep}{\ \textcolor{bulletbar}{$|$}\ }
+
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+
+\begin{document}
+\setstretch{0.95}
+\sloppy
+\emergencystretch=2em
+\tolerance=300
+\RaggedRight
+\input{resume-header-ats}
+
+% Single column: summary (contact is inline with name), experience, then rest
+\renewcommand{\contact}[1]{}  % contact already in header
+\input{resume-summary-contact}
+\input{resume-main}
+\input{resume-sidebar-rest}
+\end{document}
