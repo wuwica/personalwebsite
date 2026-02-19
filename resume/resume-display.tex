@@ -71,15 +71,21 @@
   \endgroup\\[6pt]}
 
 % Content macros
-\newcommand{\name}[2]{\vspace{1em}\color{header}\fontsize{34}{34}\selectfont\sffamily\fontseries{m}\selectfont#1\ \setlength{\fboxrule}{2.5pt}\setlength{\fboxsep}{3pt}\fcolorbox{bulletbar}{sidebarblue}{#2}\hspace{0.3em}\raisebox{0.4ex}{\footnotesize\color{body}\begin{tabular}[t]{@{}l@{}}\taglinecontent\end{tabular}}\\}
+\newcommand{\name}[2]{%
+  \vspace{1em}%
+  \color{header}\fontsize{34}{34}\selectfont\sffamily\fontseries{m}\selectfont#1\ %
+  \setlength{\fboxrule}{2.5pt}\setlength{\fboxsep}{3pt}\fcolorbox{bulletbar}{sidebarblue}{#2}%
+  \hspace{0.3em}%
+  \raisebox{18pt}{\footnotesize\color{body}\begin{tabular}[t]{@{}l@{}}\taglinecontent\end{tabular}}%
+  \\}
 \newcommand{\tagline}[1]{\newcommand{\taglinecontent}{#1}}
-\newcommand{\summary}[1]{\color{body}\sectionhead{Summary}{\fontseries{l}\selectfont #1}\vspace{5pt}}
-\newcommand{\contact}[1]{\color{body}\sectionhead{Contact}{\fontseries{l}\selectfont #1}\vspace{5pt}}
-\newcommand{\education}[1]{\color{body}\sectionhead{Education}{\fontseries{l}\selectfont #1}\vspace{5pt}}
-\newcommand{\languages}[1]{\color{body}\sectionhead{Languages}{\fontseries{l}\selectfont #1}\vspace{5pt}}
-\newcommand{\tools}[1]{\color{body}\sectionhead{Tools and Software}{\fontseries{l}\selectfont #1}\vspace{5pt}}
-\newcommand{\languagesandtools}[2]{\color{body}\sectionhead{Languages \& Tools}{\fontseries{l}\selectfont #1 \\[2pt] #2}\vspace{5pt}}
-\newcommand{\hobbies}[1]{\color{body}\sectionhead{Hobbies}{\fontseries{l}\selectfont \begin{itemize}#1\end{itemize}}\vspace{5pt}}
+\newcommand{\summary}[1]{\color{body}\sectionhead{Summary}{\fontseries{l}\selectfont #1}\vspace{12pt}}
+\newcommand{\contact}[1]{\color{body}\sectionhead{Contact}{\fontseries{l}\selectfont #1}\vspace{12pt}}
+\newcommand{\education}[1]{\color{body}\sectionhead{Education}{\fontseries{l}\selectfont #1}\vspace{12pt}}
+\newcommand{\languages}[1]{\color{body}\sectionhead{Languages}{\fontseries{l}\selectfont #1}\vspace{12pt}}
+\newcommand{\tools}[1]{\color{body}\sectionhead{Tools and Software}{\fontseries{l}\selectfont #1}\vspace{12pt}}
+\newcommand{\languagesandtools}[2]{\color{body}\sectionhead{Languages \& Tools}{\fontseries{l}\selectfont #1 \\[2pt] #2}\vspace{12pt}}
+\newcommand{\hobbies}[1]{\color{body}\sectionhead{Hobbies}{\fontseries{l}\selectfont \begin{itemize}#1\end{itemize}}\vspace{12pt}}
 \newcommand{\experience}[1]{\color{body}\sectionhead{Experience}#1}
 \newcommand{\phone}[1]{\color{body}\mbox{#1}}
 \newcommand{\email}[1]{\href{mailto:#1}{\color{linkblue}#1}}
