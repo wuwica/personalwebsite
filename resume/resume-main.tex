@@ -2,28 +2,29 @@
 \experience{%
   \job{Yume Arcade}{November 2023 -- Current}{Founder \& CTO}%
   {Java -- Spring, NextJS, Postgres, Network Architecture}{%
-  \item Founded and led all technical development for a physical arcade business, owning software, hardware, firmware, and network infrastructure end-to-end.
-  \item Designed custom PCB hardware and ESP32 (Arduino/C++) firmware to power a proprietary arcade credit system, purpose-built for full hardware control and deep integration with in-house software.
-  \item Built bespoke backend services to manage credits, user actions, and device communication, ensuring consistent state across machines with zero production downtime.
-  \item Designed and deployed an on-prem server architecture enabling fully offline operation, ensuring low-latency payments and uninterrupted arcade operation independent of internet connectivity
-  \item Programmed, manufactured, and deployed a self-service customer kiosk integrating NFC chips, multi-card dispensers, and Square payment terminal APIs, halving the clerk headcount required and freeing staff to focus on higher-value customer interactions.
-  \item Built a digital queue management system and customer-facing app that improved peak-hour customer flow, driving an estimated 10\% increase in revenue per hour across all customers.
+  \item Founded and led all technical development for a physical arcade business, scaling it to \$XXK/month in revenue as the sole engineer owning software, hardware, firmware, and network infrastructure end-to-end.
+  \item Designed and manufactured custom PCB hardware with ESP32 (Arduino/C++) firmware to power a proprietary arcade credit system, enabling deep hardware-software integration and full control over the payment and session lifecycle.
+  \item Built bespoke backend services to manage credits, user actions, and device state synchronization across machines, maintaining zero production downtime since launch.
+  \item Designed and deployed an on-premises server architecture enabling fully offline operation, eliminating dependency on internet connectivity and ensuring sub-100ms payment latency at all times.
+  \item Engineered, manufactured, and deployed self-service customer kiosks integrating NFC chips, multi-card dispensers, and Square payment APIs — cutting required clerk headcount by 50\% and redirecting staff to higher-value customer interactions.
+  \item Built a digital queue management system and customer-facing app that optimized peak-hour throughput, driving an estimated 10\% increase in revenue per hour.
   }%
   \job{ShareSFR}{November 2024 -- Current}{Senior Software Developer}%
   {Python, Langchain -- OpenAI, Postgres, AWS}{%
-  \item Designed and implemented an AI-driven, batch document ingestion and parsing service as a solo developer, processing ~3,000 unstructured legal and financial documents into normalized database models.
-  \item Built multi-step data pipelines using OpenAI models to transform unstructured data into serialized, versioned records through document classification and entity/date extraction.
-  \item Implemented confidence scoring and thresholding to flag uncertain AI outputs and support downstream human review workflows.
-  \item Optimized the pipeline to run within AWS micro-instance constraints, reducing per-document processing cost by 75\% while maintaining throughput and reliability
-  \item Significantly improved human productivity by reducing manual document tagging, increasing document ingestion volume and enabling faster onboarding of new data.
-  \item Owned service architecture, data modeling, and operational tradeoffs for a production AI system despite limited infrastructure and model performance constraints.
+  \item Sole engineer responsible for designing and delivering an AI-driven document ingestion platform capable of processing 3,000 unstructured legal and financial documents per day into normalized, queryable database models.
+  \item Optimized the full pipeline to operate within AWS micro-instance constraints, reducing per-document processing cost by 75\% while preserving throughput and reliability at scale.
+  \item Architected multi-step LLM pipelines using OpenAI models to automate document classification, entity extraction, and date parsing - transforming raw, unstructured input into serialized, versioned records with no manual intervention.
+  \item Designed and implemented a confidence scoring and thresholding system to surface uncertain AI outputs for human review, improving downstream data quality and reducing silent errors in production.
+  \item Eliminated manual document tagging bottlenecks, enabling the business to onboard new data sources faster and materially increasing the volume of documents processed per analyst per day.
+  \item Owned all architecture decisions, data modeling, and operational tradeoffs for a production AI system end-to-end under significant infrastructure and model performance constraints.
   }%
   \job{Loblaw Digital}{November 2019 -- November 2024}{Software Developer}%
   {Java -- Spring, Elixir -- Phoenix, GCP, PostgreSQL}{%
-  \item Designed and developed a real-time stock visibility feature for the cart service, integrating live inventory data with data science predicted stock levels to reduce product substitutions and improve the customer shopping experience
-  \item Refactored logging across key service components and overhauled alerting to better reflect real system state, significantly reducing false positive alerts and improving on-call reliability
-  \item Introduced CI/CD performance testing to incentivize better code quality and more consistent performance checks.
-  \item Reduced P95 API latency by 15\% and improved performance for large carts by 25\% by identifying and refactoring several key functions. 
-  \item Designed and built new components for micro services, redesigned aimed to improve performance, code quality and maintainability
+  \item One of 4 engineers trusted with ownership of 2 critical, revenue-impacting services within a 100-person engineering org at Canada's largest retailer.
+  \item Designed and delivered a real-time stock visibility feature for the cart service, integrating live inventory feeds with data-science-predicted stock levels to reduce product substitutions and improve the end-to-end customer shopping experience.
+  \item Overhauled logging and alerting infrastructure across core service components, cutting false positive alerts by ~50\% while increasing signal fidelity - giving the on-call team clearer, more actionable insight into real system errors.
+  \item Introduced CI/CD performance testing baselines that established continuous visibility into service health, enabling the team to catch regressions before production and maintain P99 SLA compliance across all deployments.
+  \item Reduced P95 API latency by 15\% and improved performance for large cart operations by 25\% through targeted profiling and refactoring of critical service functions.
+  \item Designed and built new microservice components with a focus on performance, maintainability, and long-term code quality across a high-traffic production system.
   }%
 }

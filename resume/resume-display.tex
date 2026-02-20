@@ -51,7 +51,7 @@
 
 % Custom base font size: 10.5pt (between 10pt and 11pt)
 \makeatletter
-\renewcommand{\normalsize}{\@setfontsize\normalsize{10.5}{12}%
+\renewcommand{\normalsize}{\@setfontsize\normalsize{10}{11}%
   \abovedisplayskip 10\p@ \@plus2\p@ \@minus5\p@
   \abovedisplayshortskip \z@ \@plus3\p@
   \belowdisplayskip \abovedisplayskip
@@ -72,7 +72,7 @@
 
 % Content macros
 \newcommand{\name}[2]{%
-  \vspace{1em}%
+  \vspace{6pt}%
   \color{header}\fontsize{34}{34}\selectfont\sffamily\fontseries{m}\selectfont#1\ %
   \setlength{\fboxrule}{2.5pt}\setlength{\fboxsep}{3pt}\fcolorbox{bulletbar}{sidebarblue}{#2}%
   \hspace{0.3em}%
@@ -115,7 +115,7 @@
   \colorlet{titleblue}{white}%
   \colorlet{linkblue}{white}%
   \input{resume-header}%
-  \vspace{16pt}
+  \vspace{12pt}
   \input{resume-sidebar}
   \endgroup
   \vfill

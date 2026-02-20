@@ -29,7 +29,7 @@
 \usepackage{hyperref}
 \usepackage[expansion=false, protrusion=true, letterspace=100]{microtype}
 \usepackage{parskip}
-\setlength{\parskip}{2pt plus 1pt minus 1pt}
+\setlength{\parskip}{1.5pt plus 0.5pt minus 0.5pt}
 \usepackage{ragged2e}
 \usepackage{calc}
 \usepackage{setspace}
@@ -41,15 +41,15 @@
 \definecolor{bulletbar}{HTML}{2E5FA3}
 \definecolor{titleblue}{HTML}{1B2A4A}
 
-\geometry{margin=0.5in, top=0.45in, bottom=0.45in}
+\geometry{margin=0.48in, top=0.42in, bottom=0.42in}
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\setlist[itemize]{leftmargin=*, nosep, itemsep=1pt, label=\textcolor{bulletbar}{\rule{0.35em}{0.35em}}}
+\setlist[itemize]{leftmargin=*, nosep, itemsep=0.5pt, label=\textcolor{bulletbar}{\rule{0.35em}{0.35em}}}
 \frenchspacing
 
 % Custom base font size (matches display)
 \makeatletter
-\renewcommand{\normalsize}{\@setfontsize\normalsize{10}{11.5}%
+\renewcommand{\normalsize}{\@setfontsize\normalsize{10}{11.25}%
   \abovedisplayskip 10\p@ \@plus2\p@ \@minus5\p@
   \abovedisplayshortskip \z@ \@plus3\p@
   \belowdisplayskip \abovedisplayskip
@@ -66,33 +66,33 @@
   \noindent\leavevmode\begingroup
   \setlength{\sectheadrulewd}{\linewidth-\widthof{\normalsize\textbf{\color{titleblue}#1}\hspace{.5em}}-1em}%
   \normalsize\textbf{\color{titleblue}#1}\hspace{.5em}\raisebox{0.35ex}{\textcolor{bulletbar}{\rule{\sectheadrulewd}{0.8pt}}}%
-  \endgroup\\[5pt]}
+  \endgroup\\[4pt]}
 
 % Content macros (styled like display, single-column layout)
 \newcommand{\name}[2]{\vspace{0.3em}\color{header}\fontsize{24}{24}\selectfont\sffamily\fontseries{m}\selectfont#1\ #2\\[3pt]}
-\newcommand{\namewithcontact}[3]{\vspace{0.3em}\color{header}\fontsize{24}{24}\selectfont\sffamily\fontseries{m}\selectfont#1\ #2\hfill\fontsize{9.5}{11}\selectfont\fontseries{l}\selectfont\color{body}#3\normalsize\\[5pt]}
+\newcommand{\namewithcontact}[3]{\vspace{0.2em}\color{header}\fontsize{23}{23}\selectfont\sffamily\fontseries{m}\selectfont#1\ #2\hfill\fontsize{9.5}{11}\selectfont\fontseries{l}\selectfont\color{body}#3\normalsize\\[4pt]}
 \newcommand{\tagline}[1]{\newcommand{\taglinecontent}{#1}}
-\newcommand{\summary}[1]{\color{body}\sectionhead{Summary}\fontseries{l}\selectfont\fontsize{9.5}{10.5}\selectfont#1\normalsize\vspace{5pt}}
-\newcommand{\contact}[1]{\color{body}\sectionhead{Contact}\fontseries{l}\selectfont\fontsize{9.5}{10.5}\selectfont#1\normalsize\vspace{5pt}}
-\newcommand{\education}[1]{\color{body}\sectionhead{Education}\fontseries{l}\selectfont\fontsize{9.5}{10.5}\selectfont#1\normalsize\vspace{5pt}}
-\newcommand{\languages}[1]{\color{body}\sectionhead{Languages}\fontseries{l}\selectfont\fontsize{9.5}{10.5}\selectfont#1\normalsize\vspace{5pt}}
-\newcommand{\tools}[1]{\color{body}\sectionhead{Tools and Software}\fontseries{l}\selectfont\fontsize{9.5}{10.5}\selectfont#1\normalsize\vspace{5pt}}
-\newcommand{\languagesandtools}[2]{\color{body}\sectionhead{Languages \& Tools}\fontseries{l}\selectfont\fontsize{9.5}{10.5}\selectfont#1 \\[2pt] #2\normalsize\vspace{5pt}}
-\newcommand{\hobbies}[1]{\color{body}\sectionhead{Hobbies}\fontseries{l}\selectfont\fontsize{9.5}{10.5}\selectfont\begin{itemize}#1\end{itemize}\normalsize\vspace{5pt}}
+\newcommand{\summary}[1]{\color{body}\sectionhead{Summary}\fontseries{l}\selectfont\fontsize{9.5}{10.5}\selectfont#1\normalsize\vspace{3pt}}
+\newcommand{\contact}[1]{\color{body}\sectionhead{Contact}\fontseries{l}\selectfont\fontsize{9.5}{10.5}\selectfont#1\normalsize\vspace{3pt}}
+\newcommand{\education}[1]{\color{body}\sectionhead{Education}\fontseries{l}\selectfont\fontsize{9.5}{10.5}\selectfont#1\normalsize\vspace{3pt}}
+\newcommand{\languages}[1]{\color{body}\sectionhead{Languages}\fontseries{l}\selectfont\fontsize{9.5}{10.5}\selectfont#1\normalsize\vspace{3pt}}
+\newcommand{\tools}[1]{\color{body}\sectionhead{Tools and Software}\fontseries{l}\selectfont\fontsize{9.5}{10.5}\selectfont#1\normalsize\vspace{3pt}}
+\newcommand{\languagesandtools}[2]{\color{body}\sectionhead{Languages \& Tools}\fontseries{l}\selectfont\fontsize{9.5}{10.5}\selectfont#1 \\[1.5pt] #2\normalsize\vspace{3pt}}
+\newcommand{\hobbies}[1]{\color{body}\sectionhead{Hobbies}\fontseries{l}\selectfont\fontsize{9.5}{10.5}\selectfont\begin{itemize}#1\end{itemize}\normalsize\vspace{3pt}}
 \newcommand{\experience}[1]{\color{body}\sectionhead{Experience}#1}
 \newcommand{\phone}[1]{\color{body}\mbox{#1}}
 \newcommand{\email}[1]{\href{mailto:#1}{\color{linkblue}#1}}
 \newcommand{\link}[1]{\href{https://#1}{\color{linkblue}#1}\color{body}}
 \newcommand{\slashsep}{\ \textcolor{bulletbar}{\textbf{/}}\ }
-\newcommand{\edu}[3]{\color{body}\textbf{#1} \\ #2 \\ #3\vspace{3pt}}
-\newcommand{\job}[5]{\color{body}\normalsize\textbf{\textcolor{black}{#1}} \hfill #2 \\ \small\textbf{\textcolor{titleblue}{#3}} \hfill \small\textbf{#4} \\ \vspace{3pt}\normalsize\begin{itemize}#5\end{itemize}\vspace{4pt}}
+\newcommand{\edu}[3]{\color{body}\textbf{#1} \\ #2 \\ #3\vspace{2pt}}
+\newcommand{\job}[5]{\color{body}\normalsize\textbf{\textcolor{black}{#1}} \hfill #2 \\ \small\textbf{\textcolor{titleblue}{#3}} \hfill \small\textbf{#4} \\ \vspace{2pt}\normalsize\begin{itemize}#5\end{itemize}\vspace{3pt}}
 \newcommand{\contactsep}{\ \textcolor{bulletbar}{$|$}\ }
 
 \hyphenpenalty=10000
 \exhyphenpenalty=10000
 
 \begin{document}
-\setstretch{0.95}
+\setstretch{0.94}
 \sloppy
 \emergencystretch=2em
 \tolerance=300
