@@ -44,7 +44,9 @@
 \geometry{margin=0.48in, top=0.42in, bottom=0.42in}
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\setlist[itemize]{leftmargin=*, nosep, itemsep=0.5pt, label=\textcolor{bulletbar}{\rule{0.35em}{0.35em}}}
+% Plain \textbullet (not \rule) — rules often extract as junk; bullets still need
+% one newline per wrapped visual line in many PDF parsers (unavoidable without tagged PDF).
+\setlist[itemize]{leftmargin=*, nosep, itemsep=1pt, label=\textcolor{bulletbar}{\textbullet}}
 \frenchspacing
 
 % Custom base font size (matches display)
@@ -85,7 +87,14 @@
 \newcommand{\link}[1]{\href{https://#1}{\color{linkblue}#1}\color{body}}
 \newcommand{\slashsep}{\ \textcolor{bulletbar}{\textbf{/}}\ }
 \newcommand{\edu}[3]{\color{body}\textbf{#1} \\ #2 \\ #3\vspace{2pt}}
-\newcommand{\job}[5]{\color{body}\normalsize\textbf{\textcolor{black}{#1}} \hfill #2 \\ \small\textbf{\textcolor{titleblue}{#3}} \hfill \small\textbf{#4} \\ \vspace{2pt}\normalsize\begin{itemize}#5\end{itemize}\vspace{3pt}}
+% ATS: avoid \hfill “two column” lines — extractors reorder by x-position and merge
+% the right column into the wrong job. Keep each header line as single left-to-right flow.
+\newcommand{\job}[5]{%
+  \color{body}\normalsize
+  \noindent\textbf{\textcolor{black}{#1}}\quad\small #2\par
+  \noindent\small\textbf{\textcolor{titleblue}{#3}}\quad\textbf{#4}\par
+  \vspace{2pt}\normalsize
+  \begin{itemize}#5\end{itemize}\vspace{3pt}}
 \newcommand{\contactsep}{\ \textcolor{bulletbar}{$|$}\ }
 
 \hyphenpenalty=10000
